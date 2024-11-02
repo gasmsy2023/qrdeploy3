@@ -400,3 +400,18 @@ def delete_student(request, student_id):
         student.delete()
         messages.success(request, f'Student record deleted for {student.noms_et_prenoms}')
         return redirect('certifications:index')
+
+
+def clear_database(request):
+    if request.method == 'POST':
+        # Clear all data
+        Student.objects.all().delete()
+        Issuer.objects.all().delete()
+
+        messages.success(request, 'Database cleared successfully.')
+        return redirect('certifications:index')  # Assuming 'certifications' is your app name
+    else:
+        return render(request, 'clear_database.html')
+
+def confirm_clear(request):
+    return render(request, 'clear_database.html')

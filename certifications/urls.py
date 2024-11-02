@@ -22,4 +22,5 @@ urlpatterns = [
     path('issuers/edit/<int:issuer_id>/', views.edit_issuer, name='edit_issuer'),
     path('verify-issuer/<uuid:uuid>/', views.verify_issuer, name='verify_issuer'),
     path('student-qr-info/<int:student_id>/', views.student_qr_info, name='student_qr_info'),
+    path('clear_database/', views.clear_database, name='clear_database'),
 ]

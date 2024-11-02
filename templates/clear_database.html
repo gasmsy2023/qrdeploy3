@@ -1,0 +1,8 @@
+<h1>Are you sure you want to clear the entire database?</h1>
+<p>This action cannot be undone!</p>
+<form method="POST">
+  {% csrf_token %}
+  <input type="hidden" name="confirm" value="yes">
+  <button type="submit">Yes, clear database</button>
+</form>
+<a href="/">Cancel</a>
